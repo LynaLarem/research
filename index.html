@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lyna Rouaida Larem · Portfolio</title>
-<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Interests: software engineering, machine learning and deep learning, formal modelling and verification, embedded and cyber-physical systems.">
+<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Interests: trustworthy AI and machine learning, software and systems engineering, formal modelling and runtime verification, cyber-physical and dependable systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: single narrow column. Hero, thesis (featured), projects, skills, background, contact. */
+/* Layout: single narrow column. Top nav, hero, thesis (featured), projects, skills, background, contact. */
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --fg:#14213D; --muted:#55627A; --line:#D9DFE8;
   --accent:#0B7A85; --accent-ink:#FFFFFF; --tag-bg:#E4EEF1;
@@ -23,6 +23,7 @@
   --bg:#0E1626; --surface:#162135; --fg:#E8EDF5; --muted:#9AA7BD; --line:#26334C;
   --accent:#4FC3CE; --accent-ink:#0E1626; --tag-bg:#1B2B40; color-scheme:dark}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px}
 .wrap{max-width:860px;margin-inline:auto}
 a{color:var(--accent)}
@@ -30,8 +31,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
 .label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-header.hero{padding-block:72px 56px;border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(40px,8vw,72px);font-weight:700;letter-spacing:-.02em;margin-top:14px}
+.topbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:24px}
+.navlinks{display:flex;flex-wrap:wrap;gap:16px}
+.navlinks a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.navlinks a:hover{color:var(--accent)}
+
+header.hero{padding-block:48px 56px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(40px,8vw,72px);font-weight:700;letter-spacing:-.02em;margin-top:8px}
 .hero .role{font-family:var(--display);font-size:clamp(20px,3.4vw,28px);color:var(--accent);margin-top:12px;font-weight:500}
 .hero p.intro{max-width:62ch;margin:24px 0 0;font-size:18px}
 .hero p.interests{max-width:62ch;margin:14px 0 0;color:var(--muted);font-size:16px}
@@ -64,14 +70,13 @@ th:first-child,td:first-child{text-align:left}
 th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
 tbody tr:last-child td{border-bottom:0}
 
-.grid2{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.grid2 .card h3{font-size:19px}
-
 .list{display:grid;gap:0}
 .item{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:20px;border-top:1px solid var(--line)}
 .item:last-child{border-bottom:1px solid var(--line)}
 .item h3{font-size:19px}
 .item p{margin:0;color:var(--muted);max-width:66ch}
+.item .proj-link{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:13px;text-decoration:none}
+.item .proj-link:hover{text-decoration:underline}
 @media(min-width:720px){.item{grid-template-columns:200px minmax(0,1fr);gap:28px}}
 
 .skills{display:grid;gap:22px 40px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -99,12 +104,22 @@ footer p{max-width:60ch;margin:0}
 <body>
 <div class="wrap">
 
-<header class="hero">
+<nav class="topbar" aria-label="Primary navigation">
   <div class="label">Portfolio · Constantine, Algeria</div>
+  <div class="navlinks">
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#background">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
   <h1>Lyna Rouaida Larem</h1>
   <div class="role">MSc in Software &amp; Intelligent Systems Engineering</div>
-  <p class="intro">I am a recent Master's graduate in software engineering and intelligent systems. My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas, without labelled data and with interpretable alerts. I am looking for a PhD where I can combine machine learning with rigorous software and systems engineering.</p>
-  <p class="interests"><b>Research interests:</b> software engineering; machine learning, deep learning and artificial intelligence; modelling and formal specification and verification of systems; embedded and cyber-physical systems; runtime monitoring, fault detection and dependable systems.</p>
+  <p class="intro">I am a Master's graduate in software engineering and intelligent systems. My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas without labelled data and with interpretable alerts. I am looking for a PhD where I can combine machine learning with rigorous software and systems engineering.</p>
+  <p class="interests"><b>Research interests:</b> trustworthy AI and machine learning; software and systems engineering; formal modelling and runtime verification; cyber-physical and dependable systems.</p>
   <div class="actions">
     <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">GitHub</a>
     <a class="btn" href="https://linkedin.com/in/lyna-rouaida-l-4024a3254" target="_blank" rel="noopener">LinkedIn</a>
@@ -145,9 +160,9 @@ footer p{max-width:60ch;margin:0}
       </div>
     </div>
     <p style="margin:18px 0 0;color:var(--muted);font-size:14.5px"><b>Methods used:</b> state estimation and residual analysis, change-point detection for slow drifts, threshold calibration per profile, simulation-based evaluation with precision and recall.</p>
-    <p style="margin:10px 0 0;color:var(--muted);font-size:14.5px"><b>Next step I identified in the thesis:</b> use the simulated scenarios as a dataset to train machine-learning models that improve detection.</p>
-    <!-- TODO: once the repository is public, add a link here:
-    <div class="links"><a class="btn" href="https://github.com/LynaLarem/REPO-NAME" target="_blank" rel="noopener">Code on GitHub</a></div> -->
+    <p style="margin:10px 0 0;color:var(--muted);font-size:14.5px"><b>Next step identified in the thesis:</b> use the simulated scenarios as a dataset to train machine-learning models that improve detection.</p>
+    <!-- TODO: once the thesis repository is public, uncomment and update the link:
+    <div class="links"><a class="btn" href="https://github.com/LynaLarem/THESIS-REPO" target="_blank" rel="noopener">Code on GitHub</a></div> -->
   </article>
 </section>
 
@@ -155,13 +170,51 @@ footer p{max-width:60ch;margin:0}
   <div class="label">Projects</div>
   <h2>Machine learning, software and systems</h2>
   <div class="list">
-    <div class="item"><div><div class="label">Course assignment</div><h3>Regression on a diabetes dataset</h3></div><p>Cleaning of missing values, encoding and scaling, then comparison of four regularized linear models (SGD, Ridge, Lasso, ElasticNet) with MSE, R² and 5-fold cross-validation, plus a study of the learned coefficients. scikit-learn.</p></div>
-    <div class="item"><div><div class="label">Course assignment · pair work</div><h3>Heart-disease classification</h3></div><p>Same pipeline for a classification task: logistic regression, SVM, KNN, decision tree, random forest and XGBoost, compared with accuracy, precision, recall and F1. scikit-learn, XGBoost.</p></div>
-    <div class="item"><div><div class="label">Academic project</div><h3>Facial image classification with a CNN</h3></div><p>Deep-learning image classification with a convolutional neural network.</p></div>
-    <div class="item"><div><div class="label">Academic project</div><h3>Big Data architecture for online-learning analytics</h3></div><p>Batch and streaming processing on a distributed architecture (Hadoop cluster in Docker, HDFS, Spark), with engagement indicators and dashboards.</p></div>
-    <div class="item"><div><div class="label">Bachelor's final project</div><h3>Gamified learning web platform</h3></div><p>Educational platform with gamification (React, Spring Boot REST API, MySQL) and an escape-room learning game built in Unity. Team of three.</p></div>
-    <div class="item"><div><div class="label">Project</div><h3>DevOps deployment of an e-commerce site</h3></div><p>Deployment and operation on AWS with a CI/CD pipeline (Jenkins), infrastructure as code (Terraform) and Docker.</p></div>
-    <div class="item"><div><div class="label">Academic</div><h3>Other projects</h3></div><p>A Neo4j graph database and the design of an enterprise network (VLAN, IoT).</p></div>
+    <div class="item">
+      <div>
+        <div class="label">ML benchmark · Pair work</div>
+        <h3>Predictive modeling on clinical datasets</h3>
+      </div>
+      <div>
+        <p>Comparative evaluation of preprocessing pipelines (statistical imputation, categorical encoding, leakage-free scaling) and supervised baselines on two medical benchmarks: heart-disease classification (KNN, SVM, XGBoost, Random Forest; 63.93% accuracy) and diabetes progression regression (Lasso, Ridge, ElasticNet, SGD; 5-fold cross-validation). Python, scikit-learn, XGBoost.</p>
+        <a class="proj-link" href="https://github.com/LynaLarem/clinical-ml-benchmark" target="_blank" rel="noopener">View code &amp; technical report on GitHub →</a>
+      </div>
+    </div>
+    <div class="item">
+      <div>
+        <div class="label">Academic project</div>
+        <h3>Facial image classification with a CNN</h3>
+      </div>
+      <p>End-to-end deep-learning pipeline for multi-class facial image recognition using a convolutional neural network, data augmentation, and validation accuracy tracking.</p>
+    </div>
+    <div class="item">
+      <div>
+        <div class="label">Academic project</div>
+        <h3>Big Data architecture for online-learning analytics</h3>
+      </div>
+      <p>Distributed batch and stream processing pipeline built on a containerized Hadoop cluster (Docker, HDFS, Apache Spark) to compute learner engagement metrics and analytical dashboards.</p>
+    </div>
+    <div class="item">
+      <div>
+        <div class="label">Bachelor's final project</div>
+        <h3>Gamified learning web platform</h3>
+      </div>
+      <p>Full-stack educational web application integrating gamification mechanics (React, Spring Boot REST API, MySQL) paired with a 3D educational escape-room game built in Unity. Team of three.</p>
+    </div>
+    <div class="item">
+      <div>
+        <div class="label">Cloud &amp; DevOps project</div>
+        <h3>Automated deployment of an e-commerce platform</h3>
+      </div>
+      <p>Cloud provisioning and continuous delivery on AWS using Infrastructure as Code (Terraform), automated CI/CD pipelines (Jenkins), and Docker containers.</p>
+    </div>
+    <div class="item">
+      <div>
+        <div class="label">Academic</div>
+        <h3>Additional coursework projects</h3>
+      </div>
+      <p>Graph data modeling and querying with Neo4j, and enterprise network architecture design (VLAN segmentation, IoT simulation).</p>
+    </div>
   </div>
 </section>
 
@@ -186,7 +239,7 @@ footer p{max-width:60ch;margin:0}
     <div class="row"><div class="when">2021</div><div><h3>Baccalauréat, Mathematics stream</h3><p>With honours.</p></div></div>
   </div>
   <div class="two">
-    <div><h3>Certificates</h3><ul><li>AWS Cloud Foundations (December 2025)</li><li>AWS Machine Learning Foundations (in progress)</li></ul></div>
+    <div><h3>Certificates</h3><ul><li>AWS Cloud Foundations (December 2025)</li><li>AWS Machine Learning Foundations (2026)</li></ul></div>
     <div><h3>Languages</h3><ul><li>Arabic, native</li><li>French, fluent</li><li>English, good written and spoken</li><li>Turkish, intermediate</li></ul></div>
   </div>
 </section>
@@ -194,7 +247,7 @@ footer p{max-width:60ch;margin:0}
 <footer id="contact">
   <div class="label">Contact</div>
   <h2>Get in touch</h2>
-  <p>For PhD opportunities, research collaborations or questions about my work, write to me. Code is on GitHub.</p>
+  <p>For PhD opportunities, research collaborations or questions about my work, feel free to write to me. Code is available on GitHub.</p>
   <div class="mail"><code id="addr">laremlyna2003@gmail.com</code><button id="copy" type="button">Copy address</button></div>
   <div class="actions">
     <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">github.com/LynaLarem</a>
