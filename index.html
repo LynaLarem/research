@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lyna Rouaida Larem · Portfolio</title>
+<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Research interests: machine learning, cyber-physical systems, runtime monitoring and dependable systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single narrow column. Hero, thesis (featured), ML projects, other projects, skills, background, contact. */
+:root{
+  --bg:#F4F6F9; --surface:#FFFFFF; --fg:#14213D; --muted:#55627A; --line:#D9DFE8;
+  --accent:#0B7A85; --accent-ink:#FFFFFF; --tag-bg:#E4EEF1;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1626; --surface:#162135; --fg:#E8EDF5; --muted:#9AA7BD; --line:#26334C;
+  --accent:#4FC3CE; --accent-ink:#0E1626; --tag-bg:#1B2B40; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1626; --surface:#162135; --fg:#E8EDF5; --muted:#9AA7BD; --line:#26334C;
+  --accent:#4FC3CE; --accent-ink:#0E1626; --tag-bg:#1B2B40; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px}
+.wrap{max-width:860px;margin-inline:auto}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+header.hero{padding-block:72px 56px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(40px,8vw,72px);font-weight:700;letter-spacing:-.02em;margin-top:14px}
+.hero .role{font-family:var(--display);font-size:clamp(20px,3.4vw,28px);color:var(--accent);margin-top:12px;font-weight:500}
+.hero p.intro{max-width:62ch;margin:24px 0 0;font-size:18px}
+.hero p.interests{max-width:62ch;margin:14px 0 0;color:var(--muted);font-size:16px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);color:var(--accent);font-size:15px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:32px;font-size:14px;color:var(--muted)}
+.facts b{color:var(--fg);font-weight:600}
+
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+section>h2{font-size:clamp(26px,4.5vw,34px);margin:8px 0 28px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{font-size:22px;margin:6px 0 10px}
+.card p{margin:0 0 16px;max-width:64ch}
+.card .meta{font-size:14px;color:var(--muted);margin:-4px 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-family:var(--mono);font-size:12.5px;background:var(--tag-bg);padding:4px 10px;border-radius:4px}
+.steps{margin:0 0 18px;padding-left:20px;max-width:64ch}
+.steps li{margin-bottom:6px}
+.card .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+
+.results{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+.results .label{display:block;margin-bottom:10px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14.5px}
+caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:13.5px;padding-top:10px}
+th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+
+.grid2{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid2 .card h3{font-size:19px}
+
+.list{display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:20px;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item h3{font-size:19px}
+.item p{margin:0;color:var(--muted);max-width:66ch}
+@media(min-width:720px){.item{grid-template-columns:200px minmax(0,1fr);gap:28px}}
+
+.skills{display:grid;gap:22px 40px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.skills h3{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
+.skills p{margin:0}
+
+.timeline{display:grid;gap:26px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:2px}
+.row .when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.row h3{font-size:18px}
+.row p{margin:2px 0 0;color:var(--muted);max-width:66ch}
+@media(min-width:720px){.row{grid-template-columns:150px minmax(0,1fr);gap:28px}}
+.two{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:40px}
+.two h3{font-size:18px;margin-bottom:10px}
+.two ul{margin:0;padding-left:18px}
+
+footer{padding-block:56px 72px}
+footer h2{font-size:clamp(26px,4.5vw,34px);margin:8px 0 14px}
+footer p{max-width:60ch;margin:0}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.mail code{font-family:var(--mono);font-size:15px;background:var(--surface);border:1px solid var(--line);padding:9px 14px;border-radius:6px;overflow-wrap:anywhere;user-select:all}
+.mail button{font:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:9px 16px;border-radius:6px;border:1.5px solid var(--accent);background:transparent;color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="label">Portfolio · Constantine, Algeria</div>
+  <h1>Lyna Rouaida Larem</h1>
+  <div class="role">MSc in Software &amp; Intelligent Systems Engineering</div>
+  <p class="intro">My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas, without labelled data and with interpretable alerts. I want to carry this work further, towards machine learning for cyber-physical systems.</p>
+  <p class="interests"><b>Research interests:</b> machine learning and artificial intelligence, cyber-physical and embedded systems, surrogate models and simulation-based analysis, optimization, runtime monitoring and fault detection, dependable systems.</p>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/lyna-rouaida-l-4024a3254" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="facts">
+    <span><b>3rd of 110</b> in the Bachelor's degree</span>
+    <span>Master's thesis <b>19/20</b></span>
+    <span>Master's degree awarded <b>June 2026</b></span>
+  </div>
+</header>
+
+<section id="research">
+  <div class="label">Research</div>
+  <h2>Master's thesis</h2>
+  <article class="card">
+    <div class="label">Master's thesis · 2026 · supervised by Dr. Fateh Latreche and Ms. Rayene Chabani · joint project with a classmate</div>
+    <h3>Fault tolerance by runtime monitoring for a medical cyber-physical system</h3>
+    <p>An artificial pancreas delivers insulin automatically. If its pump fails, the patient receives no insulin and the glucose level can rise to dangerous values. The system detects this from the signals already present in the loop (continuous glucose monitor and insulin doses) and alerts the user on a phone.</p>
+    <ol class="steps">
+      <li><b>Kalman-filter detector.</b> Compares measured and predicted glucose and analyses the residuals in a sliding window, with a CUSUM score for slow drifts in the adult profile.</li>
+      <li><b>LISA-based detector.</b> Combines a glucose fault metric, an insulin fault metric and the glucose slope in a weighted score, with temporal confirmation.</li>
+      <li><b>Decision fusion.</b> Three confidence levels: normal, suspected failure, confirmed failure.</li>
+    </ol>
+    <p>Thresholds and window sizes are calibrated offline for each patient profile and evaluated in the SimGlucose simulator (UVa/Padova) on a virtual child, adolescent and adult.</p>
+    <ul class="tags"><li>Python</li><li>SimGlucose</li><li>Kalman filter</li><li>CUSUM</li><li>Runtime monitoring</li><li>No labelled data</li></ul>
+    <div class="results">
+      <span class="label">Online detection, 24-hour simulation, 6 failure windows</span>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Method</th><th>TP</th><th>FP</th><th>FN</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead>
+          <tbody>
+            <tr><td>Kalman filter</td><td>5</td><td>2</td><td>1</td><td>71.4%</td><td>83.3%</td><td>76.9%</td></tr>
+            <tr><td>LISA, weighted score</td><td>5</td><td>2</td><td>1</td><td>71.4%</td><td>83.3%</td><td>76.9%</td></tr>
+            <tr><td>Decision fusion</td><td>4</td><td>1</td><td>2</td><td>80.0%</td><td>66.7%</td><td>72.7%</td></tr>
+          </tbody>
+          <caption>Fusion raises precision and lowers recall. A single 24-hour simulation: a proof of concept, not a clinical validation.</caption>
+        </table>
+      </div>
+    </div>
+    <p style="margin:18px 0 0;color:var(--muted);font-size:14.5px"><b>Next step I identified in the thesis:</b> use the simulated scenarios as a dataset to train machine-learning models that improve detection.</p>
+    <!-- TODO: once the repository is public, add a link here:
+    <div class="links"><a class="btn" href="https://github.com/LynaLarem/REPO-NAME" target="_blank" rel="noopener">Code on GitHub</a></div> -->
+  </article>
+</section>
+
+<section id="ml">
+  <div class="label">Machine learning</div>
+  <h2>Supervised-learning projects</h2>
+  <div class="grid2">
+    <article class="card">
+      <div class="label">Course assignment</div>
+      <h3>Regression on a diabetes dataset</h3>
+      <p>Cleaning of missing values, encoding and scaling, then comparison of four regularized linear models (SGD, Ridge, Lasso, ElasticNet) with MSE, R² and 5-fold cross-validation, plus a study of the learned coefficients.</p>
+      <ul class="tags"><li>scikit-learn</li><li>Regression</li><li>Cross-validation</li></ul>
+    </article>
+    <article class="card">
+      <div class="label">Course assignment · pair work</div>
+      <h3>Heart-disease classification</h3>
+      <p>Same pipeline for a classification task: logistic regression, SVM, KNN, decision tree, random forest and XGBoost, compared with accuracy, precision, recall and F1.</p>
+      <ul class="tags"><li>scikit-learn</li><li>XGBoost</li><li>Classification</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="label">Other projects</div>
+  <h2>Software, data and cloud</h2>
+  <div class="list">
+    <div class="item"><div><div class="label">Academic project</div><h3>Big Data architecture for online-learning analytics</h3></div><p>Batch and streaming processing on a distributed architecture (Hadoop cluster in Docker, HDFS, Spark), with engagement indicators and dashboards.</p></div>
+    <div class="item"><div><div class="label">Bachelor's final project</div><h3>Gamified learning web platform</h3></div><p>Educational platform with gamification (React, Spring Boot REST API, MySQL) and an escape-room learning game built in Unity. Team of three.</p></div>
+    <div class="item"><div><div class="label">Project</div><h3>DevOps deployment of an e-commerce site</h3></div><p>Deployment and operation on AWS with a CI/CD pipeline (Jenkins), infrastructure as code (Terraform) and Docker.</p></div>
+    <div class="item"><div><div class="label">Academic</div><h3>Other projects</h3></div><p>Facial image classification with a CNN, a Neo4j graph database, and the design of an enterprise network (VLAN, IoT).</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="label">Skills</div>
+  <h2>Tools I work with</h2>
+  <div class="skills">
+    <div><h3>Programming</h3><p>Python, Java, JavaScript, C/C++, SQL</p></div>
+    <div><h3>Data &amp; AI</h3><p>Pandas, NumPy, Matplotlib, scikit-learn, XGBoost, Machine Learning, Deep Learning (CNN), Big Data (Hadoop, Spark)</p></div>
+    <div><h3>Cloud &amp; DevOps</h3><p>AWS (EC2, S3, RDS, Lambda), Docker, Terraform, Jenkins, CI/CD</p></div>
+    <div><h3>Software</h3><p>Spring Boot, React, Android, Unity, Git/GitHub, LaTeX</p></div>
+    <div><h3>Databases</h3><p>MySQL, PostgreSQL, MongoDB, Neo4j</p></div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="label">Background</div>
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="row"><div class="when">2024 – 2026</div><div><h3>Master's degree, Computer Science: Software and Intelligent Systems Engineering</h3><p>Université Constantine 2 – Abdelhamid Mehri, Algeria. Year averages: 13.09/20 (Master 1) and 16.36/20 (Master 2). Thesis: 19/20.</p></div></div>
+    <div class="row"><div class="when">2021 – 2024</div><div><h3>Bachelor's degree (Licence), Computer Science: Software Engineering</h3><p>Same university. Ranked 3rd of 110 students, average 15.81/20, with no resits.</p></div></div>
+    <div class="row"><div class="when">2021</div><div><h3>Baccalauréat, Mathematics stream</h3><p>With honours.</p></div></div>
+  </div>
+  <div class="two">
+    <div><h3>Certificates</h3><ul><li>AWS Cloud Foundations (December 2025)</li><li>AWS Machine Learning Foundations (in progress)</li></ul></div>
+    <div><h3>Languages</h3><ul><li>Arabic, native</li><li>French, fluent</li><li>English, good written and spoken</li><li>Turkish, intermediate</li></ul></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="label">Contact</div>
+  <h2>Get in touch</h2>
+  <p>For research collaborations or questions about my work, write to me. Code is on GitHub.</p>
+  <div class="mail"><code id="addr">laremlyna2003@gmail.com</code><button id="copy" type="button">Copy address</button></div>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">github.com/LynaLarem</a>
+    <a class="btn" href="https://linkedin.com/in/lyna-rouaida-l-4024a3254" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var b=document.getElementById('copy'),a=document.getElementById('addr');
+  b.addEventListener('click',function(){
+    var done=function(){b.textContent='Address copied';setTimeout(function(){b.textContent='Copy address'},2000)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Address selected'};
+    try{navigator.clipboard.writeText(a.textContent).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
+</body>
+</html>
