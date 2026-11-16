@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lyna Rouaida Larem · Portfolio</title>
-<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Research interests: machine learning, cyber-physical systems, runtime monitoring and dependable systems.">
+<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Interests: software engineering, machine learning and deep learning, formal modelling and verification, embedded and cyber-physical systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: single narrow column. Hero, thesis (featured), ML projects, other projects, skills, background, contact. */
+/* Layout: single narrow column. Hero, thesis (featured), projects, skills, background, contact. */
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --fg:#14213D; --muted:#55627A; --line:#D9DFE8;
   --accent:#0B7A85; --accent-ink:#FFFFFF; --tag-bg:#E4EEF1;
@@ -103,8 +103,8 @@ footer p{max-width:60ch;margin:0}
   <div class="label">Portfolio · Constantine, Algeria</div>
   <h1>Lyna Rouaida Larem</h1>
   <div class="role">MSc in Software &amp; Intelligent Systems Engineering</div>
-  <p class="intro">My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas, without labelled data and with interpretable alerts. I want to carry this work further, towards machine learning for cyber-physical systems.</p>
-  <p class="interests"><b>Research interests:</b> machine learning and artificial intelligence, cyber-physical and embedded systems, surrogate models and simulation-based analysis, optimization, runtime monitoring and fault detection, dependable systems.</p>
+  <p class="intro">I am a recent Master's graduate in software engineering and intelligent systems. My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas, without labelled data and with interpretable alerts. I am looking for a PhD where I can combine machine learning with rigorous software and systems engineering.</p>
+  <p class="interests"><b>Research interests:</b> software engineering; machine learning, deep learning and artificial intelligence; modelling and formal specification and verification of systems; embedded and cyber-physical systems; runtime monitoring, fault detection and dependable systems.</p>
   <div class="actions">
     <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">GitHub</a>
     <a class="btn" href="https://linkedin.com/in/lyna-rouaida-l-4024a3254" target="_blank" rel="noopener">LinkedIn</a>
@@ -129,7 +129,7 @@ footer p{max-width:60ch;margin:0}
       <li><b>Decision fusion.</b> Three confidence levels: normal, suspected failure, confirmed failure.</li>
     </ol>
     <p>Thresholds and window sizes are calibrated offline for each patient profile and evaluated in the SimGlucose simulator (UVa/Padova) on a virtual child, adolescent and adult.</p>
-    <ul class="tags"><li>Python</li><li>SimGlucose</li><li>Kalman filter</li><li>CUSUM</li><li>Runtime monitoring</li><li>No labelled data</li></ul>
+    <ul class="tags"><li>Python</li><li>SimGlucose</li><li>Kalman filter</li><li>CUSUM</li><li>Runtime monitoring</li><li>Fault detection</li><li>No labelled data</li></ul>
     <div class="results">
       <span class="label">Online detection, 24-hour simulation, 6 failure windows</span>
       <div class="tablewrap">
@@ -144,39 +144,24 @@ footer p{max-width:60ch;margin:0}
         </table>
       </div>
     </div>
-    <p style="margin:18px 0 0;color:var(--muted);font-size:14.5px"><b>Next step I identified in the thesis:</b> use the simulated scenarios as a dataset to train machine-learning models that improve detection.</p>
+    <p style="margin:18px 0 0;color:var(--muted);font-size:14.5px"><b>Methods used:</b> state estimation and residual analysis, change-point detection for slow drifts, threshold calibration per profile, simulation-based evaluation with precision and recall.</p>
+    <p style="margin:10px 0 0;color:var(--muted);font-size:14.5px"><b>Next step I identified in the thesis:</b> use the simulated scenarios as a dataset to train machine-learning models that improve detection.</p>
     <!-- TODO: once the repository is public, add a link here:
     <div class="links"><a class="btn" href="https://github.com/LynaLarem/REPO-NAME" target="_blank" rel="noopener">Code on GitHub</a></div> -->
   </article>
 </section>
 
-<section id="ml">
-  <div class="label">Machine learning</div>
-  <h2>Supervised-learning projects</h2>
-  <div class="grid2">
-    <article class="card">
-      <div class="label">Course assignment</div>
-      <h3>Regression on a diabetes dataset</h3>
-      <p>Cleaning of missing values, encoding and scaling, then comparison of four regularized linear models (SGD, Ridge, Lasso, ElasticNet) with MSE, R² and 5-fold cross-validation, plus a study of the learned coefficients.</p>
-      <ul class="tags"><li>scikit-learn</li><li>Regression</li><li>Cross-validation</li></ul>
-    </article>
-    <article class="card">
-      <div class="label">Course assignment · pair work</div>
-      <h3>Heart-disease classification</h3>
-      <p>Same pipeline for a classification task: logistic regression, SVM, KNN, decision tree, random forest and XGBoost, compared with accuracy, precision, recall and F1.</p>
-      <ul class="tags"><li>scikit-learn</li><li>XGBoost</li><li>Classification</li></ul>
-    </article>
-  </div>
-</section>
-
 <section id="projects">
-  <div class="label">Other projects</div>
-  <h2>Software, data and cloud</h2>
+  <div class="label">Projects</div>
+  <h2>Machine learning, software and systems</h2>
   <div class="list">
+    <div class="item"><div><div class="label">Course assignment</div><h3>Regression on a diabetes dataset</h3></div><p>Cleaning of missing values, encoding and scaling, then comparison of four regularized linear models (SGD, Ridge, Lasso, ElasticNet) with MSE, R² and 5-fold cross-validation, plus a study of the learned coefficients. scikit-learn.</p></div>
+    <div class="item"><div><div class="label">Course assignment · pair work</div><h3>Heart-disease classification</h3></div><p>Same pipeline for a classification task: logistic regression, SVM, KNN, decision tree, random forest and XGBoost, compared with accuracy, precision, recall and F1. scikit-learn, XGBoost.</p></div>
+    <div class="item"><div><div class="label">Academic project</div><h3>Facial image classification with a CNN</h3></div><p>Deep-learning image classification with a convolutional neural network.</p></div>
     <div class="item"><div><div class="label">Academic project</div><h3>Big Data architecture for online-learning analytics</h3></div><p>Batch and streaming processing on a distributed architecture (Hadoop cluster in Docker, HDFS, Spark), with engagement indicators and dashboards.</p></div>
     <div class="item"><div><div class="label">Bachelor's final project</div><h3>Gamified learning web platform</h3></div><p>Educational platform with gamification (React, Spring Boot REST API, MySQL) and an escape-room learning game built in Unity. Team of three.</p></div>
     <div class="item"><div><div class="label">Project</div><h3>DevOps deployment of an e-commerce site</h3></div><p>Deployment and operation on AWS with a CI/CD pipeline (Jenkins), infrastructure as code (Terraform) and Docker.</p></div>
-    <div class="item"><div><div class="label">Academic</div><h3>Other projects</h3></div><p>Facial image classification with a CNN, a Neo4j graph database, and the design of an enterprise network (VLAN, IoT).</p></div>
+    <div class="item"><div><div class="label">Academic</div><h3>Other projects</h3></div><p>A Neo4j graph database and the design of an enterprise network (VLAN, IoT).</p></div>
   </div>
 </section>
 
@@ -209,7 +194,7 @@ footer p{max-width:60ch;margin:0}
 <footer id="contact">
   <div class="label">Contact</div>
   <h2>Get in touch</h2>
-  <p>For research collaborations or questions about my work, write to me. Code is on GitHub.</p>
+  <p>For PhD opportunities, research collaborations or questions about my work, write to me. Code is on GitHub.</p>
   <div class="mail"><code id="addr">laremlyna2003@gmail.com</code><button id="copy" type="button">Copy address</button></div>
   <div class="actions">
     <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">github.com/LynaLarem</a>
