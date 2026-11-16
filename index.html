@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lyna Rouaida Larem · Portfolio</title>
-<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Interests: trustworthy AI and machine learning, software and systems engineering, formal modelling and runtime verification, cyber-physical and dependable systems.">
+<meta name="description" content="MSc graduate in Software and Intelligent Systems Engineering. Research interests: Software Engineering, Artificial Intelligence, Machine Learning & Deep Learning, Formal Methods & Modelling, IoT, Cloud & DevOps, and Dependable Systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -39,8 +39,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
 header.hero{padding-block:48px 56px;border-bottom:1px solid var(--line)}
 .hero h1{font-size:clamp(40px,8vw,72px);font-weight:700;letter-spacing:-.02em;margin-top:8px}
 .hero .role{font-family:var(--display);font-size:clamp(20px,3.4vw,28px);color:var(--accent);margin-top:12px;font-weight:500}
-.hero p.intro{max-width:62ch;margin:24px 0 0;font-size:18px}
-.hero p.interests{max-width:62ch;margin:14px 0 0;color:var(--muted);font-size:16px}
+.hero p.intro{max-width:64ch;margin:24px 0 0;font-size:18px}
+.hero p.interests{max-width:64ch;margin:14px 0 0;color:var(--muted);font-size:16px}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);color:var(--accent);font-size:15px}
 .btn.primary{background:var(--accent);color:var(--accent-ink)}
@@ -118,8 +118,8 @@ footer p{max-width:60ch;margin:0}
 <header class="hero">
   <h1>Lyna Rouaida Larem</h1>
   <div class="role">MSc in Software &amp; Intelligent Systems Engineering</div>
-  <p class="intro">I am a Master's graduate in software engineering and intelligent systems. My Master's thesis (graded 19/20) built a runtime-monitoring system that detects insulin-pump failures in an artificial pancreas without labelled data and with interpretable alerts. I am looking for a PhD where I can combine machine learning with rigorous software and systems engineering.</p>
-  <p class="interests"><b>Research interests:</b> trustworthy AI and machine learning; software and systems engineering; formal modelling and runtime verification; cyber-physical and dependable systems.</p>
+  <p class="intro">I am a Master's graduate in Software and Intelligent Systems Engineering. For my Master's thesis—<em>Fault Tolerance in Medical Cyber-Physical Systems through Runtime Monitoring</em> (graded 19/20)—I developed a model-based runtime monitoring system that detects insulin-pump failures in an artificial pancreas without labelled data. I am currently seeking a PhD position across software engineering, artificial intelligence, distributed systems, or formal methods.</p>
+  <p class="interests"><b>Research interests:</b> Software Engineering; Artificial Intelligence, Machine Learning &amp; Deep Learning; System Modelling &amp; Formal Methods; IoT, Cloud Computing, DevOps &amp; Automation; Cyber-Physical &amp; Dependable Systems.</p>
   <div class="actions">
     <a class="btn primary" href="https://github.com/LynaLarem" target="_blank" rel="noopener">GitHub</a>
     <a class="btn" href="https://linkedin.com/in/lyna-rouaida-l-4024a3254" target="_blank" rel="noopener">LinkedIn</a>
@@ -136,7 +136,7 @@ footer p{max-width:60ch;margin:0}
   <h2>Master's thesis</h2>
   <article class="card">
     <div class="label">Master's thesis · 2026 · supervised by Dr. Fateh Latreche and Ms. Rayene Chabani · joint project with a classmate</div>
-    <h3>Fault tolerance by runtime monitoring for a medical cyber-physical system</h3>
+    <h3>Fault Tolerance in Medical Cyber-Physical Systems through Runtime Monitoring</h3>
     <p>An artificial pancreas delivers insulin automatically. If its pump fails, the patient receives no insulin and the glucose level can rise to dangerous values. The system detects this from the signals already present in the loop (continuous glucose monitor and insulin doses) and alerts the user on a phone.</p>
     <ol class="steps">
       <li><b>Kalman-filter detector.</b> Compares measured and predicted glucose and analyses the residuals in a sliding window, with a CUSUM score for slow drifts in the adult profile.</li>
@@ -144,7 +144,7 @@ footer p{max-width:60ch;margin:0}
       <li><b>Decision fusion.</b> Three confidence levels: normal, suspected failure, confirmed failure.</li>
     </ol>
     <p>Thresholds and window sizes are calibrated offline for each patient profile and evaluated in the SimGlucose simulator (UVa/Padova) on a virtual child, adolescent and adult.</p>
-    <ul class="tags"><li>Python</li><li>SimGlucose</li><li>Kalman filter</li><li>CUSUM</li><li>Runtime monitoring</li><li>Fault detection</li><li>No labelled data</li></ul>
+    <ul class="tags"><li>Python</li><li>SimGlucose</li><li>Kalman filter</li><li>CUSUM</li><li>Runtime monitoring</li><li>Fault tolerance</li><li>No labelled data</li></ul>
     <div class="results">
       <span class="label">Online detection, 24-hour simulation, 6 failure windows</span>
       <div class="tablewrap">
